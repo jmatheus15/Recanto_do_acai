@@ -102,8 +102,13 @@ main:focus{outline:none}
 html.scrub-on .hero__track{display:block;height:340vh}
 html.scrub-on .hero__static{position:absolute!important;width:1px;height:1px;min-height:0;padding:0;overflow:hidden;clip:rect(0 0 0 0)}
 .hero__stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;background:var(--night)}
-.hero__poster,.hero__video{position:absolute;left:0;right:0;bottom:0;top:var(--top-h);width:100%;height:calc(100% - var(--top-h));object-fit:cover;object-position:68% 50%;background-size:cover;background-position:68% 50%}
-.hero__video{opacity:0;transition:opacity .8s var(--ease);transform:translateZ(0)}
+/* o copo do vídeo é grande (o Veo aproximou a câmera): o vídeo ocupa 90% da altura, preso embaixo à direita,
+   empurrado 6% da própria largura para a direita (o copo nunca sai da tela) e com as bordas de cima e da
+   esquerda dissolvidas no fundo; assim o copo fica longe do texto e dos botões em qualquer tela */
+.hero__poster,.hero__video{position:absolute;right:0;bottom:0;width:auto;height:calc((100% - var(--top-h)) * .9);aspect-ratio:16/9;max-width:none;object-fit:cover;background-size:cover;background-position:center;transform:translate3d(6%,0,0);
+  -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 16%),linear-gradient(180deg,transparent 0,#000 12%);-webkit-mask-composite:source-in;
+  mask-image:linear-gradient(90deg,transparent 0,#000 16%),linear-gradient(180deg,transparent 0,#000 12%);mask-composite:intersect}
+.hero__video{opacity:0;transition:opacity .8s var(--ease)}
 .video-ready .hero__video{opacity:1}
 .video-failed .hero__video{display:none}
 .scrim{position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(34,6,30,.55) 0%,rgba(34,6,30,0) 55%),radial-gradient(ellipse 120% 90% at 60% 45%,rgba(20,3,18,0) 40%,rgba(20,3,18,.5) 100%)}
