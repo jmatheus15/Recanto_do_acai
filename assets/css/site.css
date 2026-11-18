@@ -92,11 +92,13 @@ main:focus{outline:none}
 .hero__copy h1{font-size:clamp(2.7rem,6vw,5.4rem);margin-bottom:1.1rem;text-shadow:0 4px 30px rgba(20,3,18,.7)}
 .hero__copy .lede{color:#ecdcef}
 @media (max-width:860px){
-  .hero__static{align-items:start;padding-top:calc(var(--top-h) + 1.6rem);padding-bottom:1rem}
-  .hero__bg{align-items:flex-end;justify-content:center}
-  .hero__bg img{width:100%;height:auto;max-height:100%;object-fit:contain;-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 30%);mask-image:linear-gradient(180deg,transparent 0,#000 30%)}
-  .hero__bg::after{background:linear-gradient(180deg,rgba(34,6,30,.95) 0%,rgba(34,6,30,.7) 38%,rgba(34,6,30,0) 58%)}
-  .hero__copy{max-width:none}
+  /* a foto vem depois do texto (não presa ao rodapé): só o fundo vazio dela (45% de cima) passa por trás
+     dos botões, então o copo começa sempre abaixo deles, em qualquer altura de tela */
+  .hero__static{display:flex;flex-direction:column;min-height:0;padding:calc(var(--top-h) + 1.6rem) 0 0}
+  .hero__copy{max-width:none;padding:0 var(--pad);position:relative;z-index:1;order:1}
+  .hero__bg{position:relative;inset:auto;order:2;z-index:0;display:block;margin-top:-50vw}
+  .hero__bg img{width:100%;height:auto;-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 34%);mask-image:linear-gradient(180deg,transparent 0,#000 34%)}
+  .hero__bg::after{display:none}
 }
 /* modo scrub (computador): vídeo de tela cheia logo abaixo do topo, sem vazio em volta */
 html.scrub-on .hero__track{display:block;height:340vh}
