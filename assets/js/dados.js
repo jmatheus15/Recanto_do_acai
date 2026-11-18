@@ -19,10 +19,7 @@
   "MIDIA": {
     "heroVideo": "assets/videos/hero/hero-scrub.mp4",
     "heroVideoBytes": 7255881,
-    "heroPoster": "assets/images/hero/hero-scrub-poster.webp",
-    "heroVideoMobile": "assets/videos/hero/hero-scrub-mobile.mp4",
-    "heroVideoMobileBytes": 2642076,
-    "heroPosterMobile": "assets/images/hero/hero-scrub-poster-mobile.webp"
+    "heroPoster": "assets/images/hero/hero-scrub-poster.webp"
   },
   "DESTAQUES": [
     {

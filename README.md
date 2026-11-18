@@ -26,10 +26,8 @@ npx http-server -p 5173 -c-1
 
 ## Vídeos do topo
 
-- **Computador:** `assets/videos/hero/hero-scrub.mp4`, 1600px, 7,3 MB.
-- **Celular:** `assets/videos/hero/hero-scrub-mobile.mp4`, recortado no copo, 2,6 MB.
-- Os dois usam um quadro-chave a cada 8 quadros e não têm áudio.
-- Quem usa "movimento reduzido" ou "economia de dados" vê a foto parada.
+- **Computador:** `assets/videos/hero/hero-scrub.mp4`, 1600px, 7,3 MB, com um quadro-chave a cada 8 quadros e sem áudio.
+- **Celular, tablet em pé e quem usa "movimento reduzido":** veem a foto parada do copo pronto.
 
 ## Publicação
 

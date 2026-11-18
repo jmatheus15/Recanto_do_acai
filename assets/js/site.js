@@ -273,14 +273,13 @@
 
   // ---------- hero controlado pelo scroll (references/pipeline-scrub.md) ----------
   (function (MIDIA) {
-    // Desvio declarado da skill, a pedido do cliente: o celular também recebe o vídeo guiado pela rolagem
-    // (versão leve de 2,6 MB, recortada no copo). A foto parada fica só para movimento reduzido,
-    // economia de dados e o arquivo aberto com dois cliques.
-    var GATES = ['(prefers-reduced-motion: reduce)'];
-    var celular = matchMedia('(max-width: 860px)').matches;   // decide a versão uma vez; o CSS ajusta o enquadramento ao vivo
-    var SRC = celular && MIDIA.heroVideoMobile
-      ? { video: MIDIA.heroVideoMobile, bytes: MIDIA.heroVideoMobileBytes, poster: MIDIA.heroPosterMobile }
-      : { video: MIDIA.heroVideo, bytes: MIDIA.heroVideoBytes, poster: MIDIA.heroPoster };
+    var GATES = [
+      '(max-width: 720px)',
+      '(orientation: portrait) and (max-width: 1024px)',
+      '(orientation: portrait) and (pointer: coarse)',
+      '(orientation: landscape) and (pointer: coarse) and (max-height: 560px)',
+      '(prefers-reduced-motion: reduce)',
+    ];
     var clamp = function (v, lo, hi) { return Math.min(hi, Math.max(lo, v)); };
     var smoothstep = function (p, e0, e1) { var t = clamp((p - e0) / (e1 - e0), 0, 1); return t * t * (3 - 2 * t); };
     var rng = function (seed) { var s = seed >>> 0; return function () { return (s = (Math.imul(s, 1664525) + 1013904223) >>> 0) / 4294967296; }; };
@@ -355,17 +354,17 @@
 
     function initOnce() {
       if (inited) return; inited = true;
-      poster.style.backgroundImage = "url('" + SRC.poster + "')";   // pôster só no caminho com portão
+      poster.style.backgroundImage = "url('" + MIDIA.heroPoster + "')";   // pôster só no caminho com portão
       var started = false;
       var start = function () { if (!started) { started = true; loadBlob().catch(failVideo); } };
-      var im = new Image(); im.onload = im.onerror = start; im.src = SRC.poster;
+      var im = new Image(); im.onload = im.onerror = start; im.src = MIDIA.heroPoster;
       setTimeout(start, 4000);
     }
     function loadBlob() {
       var ctrl = new AbortController(), watchdog = setTimeout(function () { ctrl.abort(); }, 20000);
-      return fetch(SRC.video, { priority: 'low', signal: ctrl.signal }).then(function (res) {
+      return fetch(MIDIA.heroVideo, { priority: 'low', signal: ctrl.signal }).then(function (res) {
         if (!res.ok) throw new Error('vídeo ' + res.status);
-        var total = Number(res.headers.get('Content-Length')) || SRC.bytes || 1;
+        var total = Number(res.headers.get('Content-Length')) || MIDIA.heroVideoBytes || 1;
         var reader = res.body.getReader(), chunks = [], got = 0, lastRing = 0;
         function pump() {
           return reader.read().then(function (r) {
@@ -403,7 +402,7 @@
     }
     var MQLS = GATES.map(function (q) { return matchMedia(q); });   // referenciadas para os listeners não sumirem
     // dois cliques no index.html (file://) bloqueiam o fetch do vídeo: o hero estático desenhado assume
-    var local = location.protocol === 'file:' || !!(navigator.connection && navigator.connection.saveData);
+    var local = location.protocol === 'file:';
     var apply = function () { if (local || MQLS.some(function (m) { return m.matches; })) disableScrub(); else enableScrub(); };
     MQLS.forEach(function (m) { m.addEventListener('change', apply); });
     apply();
