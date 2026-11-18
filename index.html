@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Recanto do Açaí | Açaí, sorvete e milk-shake</title>
+  <meta name="description" content="Açaí cremoso do seu jeito, com 9 acompanhamentos grátis no tradicional. Delivery, retirada em 10 minutos e self-service. Monte o seu e peça pelo WhatsApp.">
+  <meta name="theme-color" content="#22061e">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23830b95' stroke='%23d59624' stroke-width='4'/%3E%3Ccircle cx='32' cy='35' r='15' fill='%232e072d'/%3E%3Cpath d='M32 20c4-7 11-8 15-6-3 5-9 8-15 6z' fill='%2375a535'/%3E%3Ccircle cx='27' cy='31' r='4' fill='%23fdc93e' opacity='.9'/%3E%3C/svg%3E">
+  <link rel="apple-touch-icon" href="assets/images/brand/logo-192.png">
+  <!-- DEPLOY STEP: trocar og:image e og:url pelos endereços absolutos do site no ar -->
+  <meta property="og:title" content="Recanto do Açaí">
+  <meta property="og:description" content="Açaí cremoso do seu jeito. Monte o seu e peça pelo WhatsApp.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/images/hero/hero-desktop.webp">
+  <meta property="og:url" content="">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=DM+Mono:wght@500&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script src="assets/js/dados.js" defer></script>
+  <script src="assets/js/pedido.js" defer></script>
+  <script src="assets/js/copo2d.js" defer></script>
+  <script src="assets/js/site.js" defer></script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"IceCreamShop","name":"Recanto do Açaí",
+   "telephone":"+55 83 99672-3523","servesCuisine":["Açaí","Sorvete","Milk-shake"],
+   "address":{"@type":"PostalAddress","streetAddress":"Principal da Linha de Ferro, próximo ao Mercado de Valdênio","addressRegion":"PB","addressCountry":"BR"},
+   "sameAs":["https://www.instagram.com/recanto_do_acaipb/"]}
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Pular para o conteúdo</a>
+  <div class="ambient" aria-hidden="true"><i></i><i></i></div>
+
+  <header class="top">
+    <a class="top__brand" href="#hero" aria-label="Recanto do Açaí, voltar ao topo">
+      <img src="assets/images/brand/logo-192.png" width="42" height="42" alt="">
+      <span>Recanto <em>do Açaí</em></span>
+    </a>
+    <nav class="top__nav" aria-label="Seções">
+      <a href="#cardapio">Cardápio</a>
+      <a href="#monte">Monte o seu</a>
+      <a href="#como">Como pedir</a>
+      <a href="#perguntas">Perguntas</a>
+    </nav>
+    <button class="bagbtn" type="button" data-open-bag aria-haspopup="dialog">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1.2 12H6.2z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+      <span class="bagbtn__label">Sacola</span><span class="bagbtn__n" data-bag-count hidden>0</span>
+    </button>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <!-- HERO: vídeo guiado pela rolagem (computador e celular); foto com movimento reduzido, economia de dados ou dois cliques -->
+    <section class="hero" id="hero" aria-labelledby="hero-title">
+      <div class="hero__track">
+        <div class="hero__stage">
+          <div class="hero__poster" aria-hidden="true"></div>
+          <video class="hero__video" preload="none" muted playsinline aria-hidden="true" tabindex="-1"></video>
+          <div class="scrim" aria-hidden="true"></div>
+          <div class="band" data-a="0" data-b="0.34" data-fx="down"><p class="band__text">Açaí cremoso, montado camada por camada.</p></div>
+          <div class="band" data-a="0.38" data-b="0.70" data-fx="scatter"><p class="band__text">Granola, creme, frutas. Você escolhe tudo.</p></div>
+          <div class="band band--final" data-a="0.74" data-b="1" data-fx="rise">
+            <p class="band__text">Escolhe o seu. A gente prepara.</p>
+            <p class="band__sub">9 acompanhamentos grátis no tradicional. Retirada em 10 minutos.</p>
+            <p class="band__cta"><a class="btn btn--accent" href="#cardapio">Ver o cardápio</a> <a class="btn btn--ghost" data-cta href="#pedir">Pedir pelo WhatsApp</a></p>
+          </div>
+          <svg class="ring" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="20" fill="none" stroke="currentColor" stroke-width="3" stroke-dasharray="126" style="stroke-dashoffset:var(--ld,126)"/></svg>
+        </div>
+      </div>
+      <div class="hero__static">
+        <picture class="hero__bg">
+          <source media="(max-width: 860px)" srcset="assets/images/hero/hero-mobile.webp" width="900" height="1350">
+          <img src="assets/images/hero/hero-desktop.webp" width="1536" height="1344" alt="Copo de açaí em camadas com banana, morango e granola sobre mesa de madeira" fetchpriority="high">
+        </picture>
+        <div class="hero__copy">
+          <p class="kicker">Açaí, sorvete e milk-shake</p>
+          <h1 id="hero-title">Açaí cremoso, gelado e <span class="hl">do seu jeito.</span></h1>
+          <p class="lede">9 acompanhamentos grátis no tradicional. Retirada em 10 minutos.</p>
+          <p class="actions"><a class="btn btn--accent" href="#cardapio">Ver o cardápio</a> <a class="btn btn--ghost" data-cta href="#pedir">Pedir pelo WhatsApp</a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FATOS -->
+    <ul class="fatos" aria-label="Por que pedir no Recanto">
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2M9 2h6"/></svg>Retirada em 10 min</li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11h16l-2 9H6z"/><circle cx="9" cy="7" r="2"/><circle cx="14" cy="6" r="1.6"/><circle cx="17" cy="8" r="1.8"/></svg>9 grátis no tradicional</li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6.5" cy="17" r="2.5"/><circle cx="17.5" cy="17" r="2.5"/><path d="M9 17h6M4 12h7l3 5M14 9h3l2 4"/></svg>Delivery e self-service</li>
+    </ul>
+
+    <!-- DESTAQUES -->
+    <section class="dest" aria-labelledby="dest-title">
+      <div class="dest__head reveal">
+        <h2 id="dest-title">Destaques <span class="hl">da casa.</span></h2>
+        <p class="dest__hint" aria-hidden="true">Arrasta para o lado →</p>
+      </div>
+      <ul class="dest__row" data-destaques></ul>
+    </section>
+
+    <!-- CARDÁPIO: uma página só, com busca e categorias fixas -->
+    <section class="menu" id="cardapio" aria-labelledby="menu-title">
+      <div class="menu__head">
+        <h2 id="menu-title" class="reveal">Cardápio<span class="hl">.</span></h2>
+        <label class="busca reveal">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <span class="sr">Buscar no cardápio</span>
+          <input type="search" placeholder="Buscar no cardápio" autocomplete="off" data-busca>
+        </label>
+      </div>
+      <nav class="cats" aria-label="Categorias do cardápio" data-cats></nav>
+      <div class="menu__body" data-menu></div>
+      <p class="menu__vazio" data-vazio hidden>Não achamos isso no cardápio. Tenta outra palavra ou <a data-wa="Olá, Recanto do Açaí! Vocês têm" href="https://wa.me/5583996723523" target="_blank" rel="noopener">chama no WhatsApp</a>.</p>
+      <noscript><p class="menu__vazio">O cardápio completo está no nosso Instagram, @recanto_do_acaipb.</p></noscript>
+
+      <!-- MOMENTO INTERATIVO: entra no lugar da categoria "Monte o seu" -->
+      <template id="tpl-monte">
+        <div class="monte" id="monte">
+          <div class="monte__stage">
+            <span class="monte__letter" data-letter aria-hidden="true">G</span>
+            <svg class="cup2d" viewBox="0 0 400 450" role="img" aria-label="Copo de açaí montado" data-copo></svg>
+            <span class="tag monte__price" data-price aria-hidden="true">R$ 15,00</span>
+          </div>
+          <div class="monte__panel">
+            <h3>Escolhe o <span class="hl">tamanho.</span></h3>
+            <p class="monte__sub">Arrasta para escolher o tamanho e marca os grátis.</p>
+            <div class="slider">
+              <label class="sr" for="monte-range">Tamanho do açaí tradicional</label>
+              <input id="monte-range" type="range" min="0" max="4" step="1" value="2" data-range>
+              <div class="slider__ticks" data-ticks></div>
+            </div>
+            <fieldset class="monte__gratis">
+              <legend>Grátis <span data-count></span></legend>
+              <div class="chips" data-gratis></div>
+            </fieldset>
+            <fieldset class="monte__gratis">
+              <legend>Frutas</legend>
+              <div class="chips" data-frutas></div>
+            </fieldset>
+            <fieldset class="monte__gratis">
+              <legend>Cobertura <span>(escolha 1)</span></legend>
+              <div class="chips" data-cob></div>
+            </fieldset>
+            <button type="button" class="btn btn--accent btn--wide" data-add-monte>Adicionar à sacola</button>
+          </div>
+        </div>
+      </template>
+    </section>
+
+    <!-- COMO PEDIR -->
+    <section class="como" id="como" aria-labelledby="como-title">
+      <h2 id="como-title" class="reveal">Pedir é <span class="hl">rapidinho.</span></h2>
+      <ol class="passos">
+        <li class="reveal"><span class="passos__n">1</span><h3>Escolhe</h3><p>Toca no + do que você quiser. Vai tudo para a sacola.</p></li>
+        <li class="reveal"><span class="passos__n">2</span><h3>Manda</h3><p>A sacola vira uma mensagem pronta no nosso WhatsApp. Você confere e envia.</p></li>
+        <li class="reveal"><span class="passos__n">3</span><h3>Pega</h3><p>Retirada em 10 minutos, ou a gente leva até você.</p></li>
+      </ol>
+    </section>
+
+    <!-- PERGUNTAS -->
+    <section class="faq" id="perguntas" aria-labelledby="faq-title">
+      <h2 id="faq-title" class="reveal">Perguntas de quem <span class="hl">vai pedir.</span></h2>
+      <div class="faq__list reveal">
+        <details><summary>Os acompanhamentos são grátis mesmo?</summary><p>São. No tradicional você escolhe entre amendoim triturado, gotas de chocolate, flocos de milho, canudos wafer, cereal ball, leite em pó, M&amp;M, chocoball e granola sem pagar nada. No BIG 1kg são 6 ou 9, conforme o preço.</p></details>
+        <details><summary>Quanto tempo demora?</summary><p>Na retirada, o seu fica pronto em 10 minutos. No delivery, a gente confirma o tempo pelo WhatsApp junto com o pedido.</p></details>
+        <details><summary>Vocês entregam?</summary><p>Entregamos. É só escolher Delivery na sacola e colocar o endereço.</p></details>
+        <details><summary>Posso levar tigela ou taça para casa?</summary><p>Os preços das tigelas e taças valem para consumo no local. Para levar, pergunte no WhatsApp.</p></details>
+        <details><summary>Onde fica o Recanto?</summary><p>Na Principal da Linha de Ferro, perto do Mercado de Valdênio.</p></details>
+        <details><summary>Qual o horário?</summary><p>O horário a gente confirma pelo WhatsApp.</p></details>
+      </div>
+    </section>
+
+    <!-- PROVA -->
+    <section class="prova" aria-labelledby="prova-title">
+      <div class="prova__fotos reveal">
+        <button class="pf pf--1" data-full="assets/images/products/ninhotella.webp"><img src="assets/images/products/ninhotella.webp" width="434" height="544" alt="Ninhotella numa mesa de madeira, com a rua ao fundo" loading="lazy"></button>
+        <button class="pf pf--2" data-full="assets/images/products/completao.webp"><img src="assets/images/products/completao.webp" width="580" height="672" alt="Completão em camadas com confeitos coloridos" loading="lazy"></button>
+        <button class="pf pf--3" data-full="assets/images/products/ninho-splash.webp"><img src="assets/images/products/ninho-splash.webp" width="470" height="542" alt="Ninho Splash com creme de ninho e açaí" loading="lazy"></button>
+      </div>
+      <div class="prova__text reveal">
+        <p class="kicker">De verdade</p>
+        <h2 id="prova-title">Fotos da <span class="hl">nossa mesa.</span></h2>
+        <p class="lede">O Recanto fica na Principal da Linha de Ferro, perto do Mercado de Valdênio. Mais de 4.700 pessoas acompanham a gente no Instagram.</p>
+        <p class="prova__ig"><a href="https://www.instagram.com/recanto_do_acaipb/" target="_blank" rel="noopener">@recanto_do_acaipb no Instagram</a></p>
+      </div>
+      <dialog class="lightbox" aria-label="Foto ampliada">
+        <img alt="">
+        <form method="dialog"><button class="lightbox__close" aria-label="Fechar">×</button></form>
+      </dialog>
+    </section>
+
+    <!-- CHAMADA FINAL -->
+    <section class="cta" id="pedir" aria-labelledby="cta-title">
+      <div class="cta__inner reveal">
+        <div class="cta__media" aria-hidden="true">
+          <video muted loop playsinline preload="none" tabindex="-1" poster="assets/images/gallery/cta-poster.webp" data-src="assets/videos/products/cta-loop.mp4"></video>
+        </div>
+        <h2 id="cta-title">Bateu a vontade? <span class="hl">Chama no WhatsApp.</span></h2>
+        <p class="lede">Delivery, retirada em 10 minutos ou self-service na loja.</p>
+        <p class="actions"><a class="btn btn--accent btn--lg" data-cta href="#">Pedir pelo WhatsApp</a></p>
+        <p class="cta__addr"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-7.5 7-13a7 7 0 0 0-14 0c0 5.5 7 13 7 13z"/><circle cx="12" cy="9" r="2.5"/></svg>Principal da Linha de Ferro, próximo ao Mercado de Valdênio</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="foot__brand">
+      <img src="assets/images/brand/logo-192.png" width="64" height="64" alt="Recanto do Açaí" loading="lazy">
+      <p>Açaí, sorvete e milk-shake.<br>Delivery, retirada e self-service.</p>
+    </div>
+    <nav class="foot__nav" aria-label="Rodapé"><a href="#cardapio">Cardápio</a><a href="#monte">Monte o seu</a><a href="#como">Como pedir</a><a href="#perguntas">Perguntas</a></nav>
+    <ul class="foot__info">
+      <li><a data-wa="Olá, Recanto do Açaí!" href="https://wa.me/5583996723523" target="_blank" rel="noopener">WhatsApp (83) 9 9672-3523</a></li>
+      <li><a href="https://www.instagram.com/recanto_do_acaipb/" target="_blank" rel="noopener">Instagram @recanto_do_acaipb</a></li>
+      <li>Principal da Linha de Ferro, próximo ao Mercado de Valdênio</li>
+      <li>Horário: consulte no WhatsApp</li>
+    </ul>
+    <p class="foot__copy">© <span data-year>2026</span> Recanto do Açaí. Todos os direitos reservados.</p>
+  </footer>
+
+  <button class="bagbar" type="button" data-open-bag hidden>
+    <span class="bagbar__info"><b data-bag-items>0 itens</b><span data-bag-total>R$ 0,00</span></span>
+    <span class="bagbar__cta">Ver sacola</span>
+  </button>
+
+  <!-- SACOLA: o formulário final; o destino é o WhatsApp da loja -->
+  <dialog class="bag" id="sacola" aria-labelledby="bag-title">
+    <form class="bag__inner" method="dialog" novalidate>
+      <header class="bag__head">
+        <h2 id="bag-title">Sua sacola</h2>
+        <button class="bag__close" value="close" aria-label="Fechar sacola">×</button>
+      </header>
+      <div class="bag__body">
+        <div class="bag__empty" data-bag-empty>
+          <p>Sua sacola está vazia.</p>
+          <p class="bag__links"><a href="#cardapio" data-close-bag>Ver o cardápio</a> <a href="#monte" data-close-bag>Montar o meu</a></p>
+          <p class="bag__direct">Prefere conversar? <a data-wa="Olá, Recanto do Açaí! Quero fazer um pedido." href="https://wa.me/5583996723523" target="_blank" rel="noopener">Chamar no WhatsApp</a></p>
+        </div>
+        <ul class="bag__list" data-bag-list></ul>
+        <div class="bag__checkout" data-bag-checkout>
+          <p class="bag__total"><span>Total</span><strong data-bag-sum>R$ 0,00</strong></p>
+          <div class="field"><label for="bag-nome">Seu nome (opcional)</label><input id="bag-nome" name="nome" autocomplete="given-name" maxlength="60"></div>
+          <fieldset class="field"><legend class="lbl">Como vai receber?</legend>
+            <div class="chips">
+              <label class="chip"><input type="radio" name="entrega" value="retirada" checked><span>Retirar na loja</span></label>
+              <label class="chip"><input type="radio" name="entrega" value="delivery"><span>Delivery</span></label>
+            </div>
+          </fieldset>
+          <div class="field" data-bag-addr hidden><label for="bag-end">Endereço de entrega</label><input id="bag-end" name="endereco" autocomplete="street-address" maxlength="160" aria-describedby="bag-end-err"><span id="bag-end-err" class="field__err" role="alert"></span></div>
+        </div>
+      </div>
+      <footer class="bag__foot" data-bag-foot>
+        <a class="btn btn--accent btn--lg btn--wide" data-bag-send target="_blank" rel="noopener" href="#">Enviar pedido no WhatsApp</a>
+        <p class="bag__fine">Abre o WhatsApp da loja, (83) 9 9672-3523, com o pedido escrito. Você confere e envia.</p>
+      </footer>
+    </form>
+  </dialog>
+</body>
+</html>

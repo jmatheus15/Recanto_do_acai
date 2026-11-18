@@ -1,0 +1,15 @@
+# Brutos de produção e materiais originais: ficam só no computador (a skill manda manter fora da publicação)
+producao/
+imagens/
+logo/
+identidade visual/
+sitede10k-skill.zip
+
+# Ferramentas e testes locais
+.playwright-mcp/
+.claude/
+node_modules/
+.vercel/
+*.env
+.DS_Store
+Thumbs.db
